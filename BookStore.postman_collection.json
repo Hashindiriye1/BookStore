@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "bookstore-api-collection",
+		"name": "BookStore API",
+		"description": "Simple BookStore API collection showing all CRUD endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Get All Authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/authors",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Author",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"New Author\",\n  \"email\": \"newauthor@example.com\",\n  \"dateOfBirth\": \"1990-01-01T00:00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authors",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Author",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Author\",\n  \"email\": \"updatedauthor@example.com\",\n  \"dateOfBirth\": \"1985-05-15T00:00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/authors/{id}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authors",
+								"{id}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Author",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/authors/{id}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"authors",
+								"{id}"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/books",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"New Book\",\n  \"description\": \"A fascinating new book\",\n  \"price\": 25.99,\n  \"publishedDate\": \"2024-01-01T00:00:00\",\n  \"authorId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/books",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Updated Book Title\",\n  \"description\": \"Updated book description\",\n  \"price\": 29.99,\n  \"publishedDate\": \"2024-02-01T00:00:00\",\n  \"authorId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/books/{id}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"{id}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/books/{id}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"{id}"
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7130",
+			"type": "string"
+		}
+	]
+} 
