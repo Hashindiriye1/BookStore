@@ -13,9 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add Entity Framework with InMemory database
+// Add Entity Framework with SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseInMemoryDatabase("BookStoreDb"));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        b => b.MigrationsAssembly("BookStore.Infrastructure")
+    ));
 
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
