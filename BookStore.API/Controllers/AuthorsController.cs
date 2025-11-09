@@ -3,11 +3,13 @@ using BookStore.Application.Features.Authors.Commands;
 using BookStore.Application.Features.Authors.Queries;
 using BookStore.Domain.Common;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.API.Controllers;
 
 [ApiController]
+[AllowAnonymous]
 [Route("api/[controller]")]
 public class AuthorsController : ControllerBase
 {
@@ -77,4 +79,4 @@ public class AuthorsController : ControllerBase
         
         return BadRequest(result);
     }
-} 
+}
