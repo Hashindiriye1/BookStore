@@ -15,4 +15,4 @@ jobs:
       
 name: Send message to Discord
       run: |
-        curl -H "Content-Type: application/json" \-d "{"content": "🚀 Ny kod pushad till $"Bookstore"!"}" \${{ secrets.Discord_bot }}
+        curl -H "Content-Type: application/json" \-d "{"content": "🚀 Ny kod pushad till $"Bookstore"!"}" \${{ secrets.DISCORD_BOT }}
