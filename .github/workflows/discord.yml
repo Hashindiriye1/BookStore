@@ -3,16 +3,15 @@ name: Notify Discord on Push
 on:
   push:
     branches:
-    - master
-      
-  
+      - master
 
 jobs:
   notify:
     runs-on: ubuntu-latest
 
     steps:
-      
-name: Send message to Discord
-      run: |
-        curl -H "Content-Type: application/json" \-d "{"content": "🚀 Ny kod pushad till $"Bookstore"!"}" \${{ secrets.DISCORD_BOT }}
+      - name: Send message to Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\": \"🚀 Ny kod pushad till **Bookstore**!\"}" \
+          ${{ secrets.DISCORD_BOT }}
